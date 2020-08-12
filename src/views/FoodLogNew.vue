@@ -60,7 +60,7 @@ created: function() {},
       };
       axios.post("/api/food_logs", params)
         .then(response => {
-          console.log("Logged", response.data)
+          console.log("Logged", response.data);
           this.$router.push("/")
         }).catch(error => {
           this.errors = error.response.data.errors;
