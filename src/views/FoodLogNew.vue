@@ -31,41 +31,41 @@
 </template>
 
 <script>
-  var axios = require("axios");
+var axios = require('axios')
 
-  export default {
-    data: function() {
-      return {
-        foodLog: [],
-        newFoodLogTimeOfDay: "",
-        newFoodLogFood: "",
-        newFoodLogCalories: "",
-        newFoodLogQuantity: "",
-        newFoodLogWorkout: "",
-        newFoodLogWaterIntake: "",
-        errors: []
-      };
-    },
-created: function() {},
-  methods: {
-    submit: function() {
-      console.log("Log submitted")
-      var params = {
-        food_type: this.newFoodLogTimeOfDay,
-        food: this.newFoodLogFood,
-        calories: this.newFoodLogCalories,
-        quantity: this.newFoodLogQuantity,
-        workout: this.newFoodLogWorkout,
-        water_intake: this.newFoodLogWaterIntake
-      };
-      axios.post("/api/food_logs", params)
-        .then(response => {
-          console.log("Logged", response.data);
-          this.$router.push("/")
-        }).catch(error => {
-          this.errors = error.response.data.errors;
-        });
-      }
+export default {
+  data: function () {
+    return {
+      foodLog: [],
+      newFoodLogTimeOfDay: "",
+      newFoodLogFood: "",
+      newFoodLogCalories: "",
+      newFoodLogQuantity: "",
+      newFoodLogWorkout: "",
+      newFoodLogWaterIntake: "",
+      errors: []
     }
-  };
+  },
+created: function () {},
+methods: {
+  submit: function() {
+    console.log("Log submitted")
+    var params = {
+      food_type: this.newFoodLogTimeOfDay,
+      food: this.newFoodLogFood,
+      calories: this.newFoodLogCalories,
+      quantity: this.newFoodLogQuantity,
+      workout: this.newFoodLogWorkout,
+      water_intake: this.newFoodLogWaterIntake
+    };
+    axios.post("/api/food_logs", params)
+      .then(response => {
+        console.log("Logged", response.data)
+        this.$router.push("/")
+      }).catch(error => {
+        this.errors = error.response.data.errors
+      });
+    }
+  }
+};
 </script>
