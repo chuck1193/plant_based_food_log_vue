@@ -80,17 +80,17 @@
     methods: {
       submit: function() {
         var params = {
-          first_name = this.firstName,
-          last_name = this.lastName,
-          email = this.email,
-          password = this.password,
-          password_confirmation = this.passwordConfirmation,
-          date_of_birth = this.dateOfBrith,
+          first_name: this.firstName,
+          last_name: this.lastName,
+          email: this.email,
+          password: this.password,
+          password_confirmation: this.passwordConfirmation,
+          date_of_birth: this.dateOfBrith,
           weight: this.weight,
-          goal_weight = this.goalWeight,
-          height = this.height,
-          weekly_goal = this.weeklyWeightLossGoal,
-          activity = this.activityLevel
+          goal_weight: this.goalWeight,
+          height: this.height,
+          weekly_goal: this.weeklyWeightLossGoal,
+          activity: this.activityLevel
         };
         axios
           .post("/api/users", params)

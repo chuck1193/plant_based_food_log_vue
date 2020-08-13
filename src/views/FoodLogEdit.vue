@@ -28,7 +28,7 @@
             <option value="aerobics">Aerobics/Dancing</option>
             <option value="yoga">Yoga</option>
             <option value=swimming>Swimming</option>
-            <option value="team-sports">Team Sports</option> 
+            <option value="team-sports">Team Sports</option>
           </select>
         </div>
         <div>

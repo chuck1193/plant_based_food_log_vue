@@ -31,7 +31,7 @@
 </template>
 
 <script>
-  import axios = require("axios");
+  var axios = require("axios");
 
   export default {
     data: function() {

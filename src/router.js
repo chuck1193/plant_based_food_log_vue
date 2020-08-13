@@ -1,21 +1,34 @@
-import Vue from "vue";
-import Router from "vue-router";
-import Home from "./views/Home.vue";
-import About from "./views/About.vue";
-import Signup from "./views/Signup.vue";
-import Login from "./views/Login.vue";
-import Logout from "./views/Logout.vue";
+import Vue from 'vue'
+import Router from 'vue-router'
+import FoodLogIndex from './views/FoodLogIndex.vue'
+import FoodLogNew from './views/FoodLogNew.vue'
+import FoodLogShow from './views/FoodLogShow.vue'
+import FoodLogEdit from './views/FoodLogEdit.vue'
+import RecipesIndex from './views/RecipesIndex.vue'
+import RecipesNew from './views/RecipesNew.vue'
+import RecipesShow from './views/RecipesShow.vue'
+import RecipesEdit from './views/RecipesEdit.vue'
+import Signup from './views/Signup.vue'
+import Login from './views/Login.vue'
+import Logout from './views/Logout.vue'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    { path: "/", name: "home", component: Home },
-    { path: "/about", name: "about", component: About },
-    { path: "/signup", name: "signup", component: Signup },
-    { path: "/login", name: "login", component: Login },
-    { path: "/logout", name: "logout", component: Logout}
+    { path: '/', name: 'home', component: FoodLogIndex },
+    { path: '/food_logs', name: 'food-logs-index', component: FoodLogIndex },
+    { path: '/food_logs/new', name: 'food-logs-new', component: FoodLogNew },
+    { path: '/food_logs/:id', name: 'food-logs-show', component: FoodLogShow },
+    { path: '/food_logs/:id/edit', name: 'food-logs-edit', component: FoodLogEdit },
+    { path: '/recipes', name: 'recipes-index', component: RecipesIndex },
+    { path: '/recipes/new', name: 'recipes-new', component: RecipesNew },
+    { path: '/recipes/:id', name: 'recipes-show', component: RecipesShow },
+    { path: '/recipes/:id/edit', name: 'recipes-edit', component: RecipesEdit },
+    { path: '/signup', name: 'signup', component: Signup },
+    { path: '/login', name: 'login', component: Login },
+    { path: '/logout', name: 'logout', component: Logout }
   ]
-});
+})
