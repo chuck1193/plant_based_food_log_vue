@@ -28,7 +28,7 @@
           </tr>
         </tbody>
       </table>
-      <h3 v:model="foodLog.water_intake">Today's water intake: {{ food_log.water_intake }}</h3>
+      <h3 v:model="foodLog.water_intake">Today's water intake: {{ foodLog.water_intake }}</h3>
       <h4 v:model="foodLog.workout">{{ foodLog.workout }}</h4>
     </div>
   </div>
