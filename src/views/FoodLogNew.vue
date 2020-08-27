@@ -1,30 +1,30 @@
 <template>
-  <div class="food-log-new">
+  <div class='food-log-new'>
     <h1>New Log</h1>
     <ul>
-      <li v-for="error in errors">{{ error }}</li>
+      <li v-for='error in errors' v-bind:key='error.id'>{{ error }}</li>
     </ul>
     <div class="container">
-      <form v-on:submit.prevent="submit()">
+      <form v-on:submit.prevent='submit()'>
         <div>
-          Time of Day: <input v-model="newFoodLogTimeOfDay">
+          Time of Day: <input v-model='newFoodLogTimeOfDay'>
         </div>
         <div>
-          Food: <input v-model="newFoodLogFood">
+          Food: <input v-model='newFoodLogFood'>
         </div>
         <div>
-          Calories: <input v-model="newFoodLogCalories">
+          Calories: <input v-model='newFoodLogCalories'>
         </div>
         <div>
-          Quantity: <input v-model="newFoodLogQuantity">
+          Quantity: <input v-model='newFoodLogQuantity'>
         </div>
         <div>
-          Workout: <input v-model="newFoodLogWorkout">
+          Workout: <input v-model='newFoodLogWorkout'>
         </div>
         <div>
-          How much water have you had(in ounces)? <input v-model="newFoodLogWaterIntake">
+          How much water have you had(in ounces)? <input v-model='newFoodLogWaterIntake'>
         </div>
-        <input type="submit" value="Submit" name="btn btn-success">
+        <input type='submit' value='Submit' name='btn btn-success'>
       </form>
     </div>
   </div>
@@ -37,19 +37,19 @@ export default {
   data: function () {
     return {
       foodLog: [],
-      newFoodLogTimeOfDay: "",
-      newFoodLogFood: "",
-      newFoodLogCalories: "",
-      newFoodLogQuantity: "",
-      newFoodLogWorkout: "",
-      newFoodLogWaterIntake: "",
+      newFoodLogTimeOfDay: '',
+      newFoodLogFood: '',
+      newFoodLogCalories: '',
+      newFoodLogQuantity: '',
+      newFoodLogWorkout: '',
+      newFoodLogWaterIntake: '',
       errors: []
     }
   },
 created: function () {},
 methods: {
-  submit: function() {
-    console.log("Log submitted")
+  submit: function () {
+    console.log('Log submitted')
     var params = {
       food_type: this.newFoodLogTimeOfDay,
       food: this.newFoodLogFood,
@@ -57,11 +57,12 @@ methods: {
       quantity: this.newFoodLogQuantity,
       workout: this.newFoodLogWorkout,
       water_intake: this.newFoodLogWaterIntake
-    };
-    axios.post("/api/food_logs", params)
+    }
+    console.log('WhR')
+    axios.post('/api/food_logs', params)
       .then(response => {
-        console.log("Logged", response.data)
-        this.$router.push("/")
+        console.log('Logged', response.data)
+        this.$router.push('/')
       }).catch(error => {
         this.errors = error.response.data.errors
       });
